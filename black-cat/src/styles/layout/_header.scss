@@ -1,0 +1,110 @@
+.header {
+  position: relative;
+  padding: 15px 0;
+  min-height: 80px;
+  border-bottom: 4px solid $yellow;
+
+  @include media('>=desktop') {
+    padding: 23px 0 0;
+    border-bottom: 0;
+  }
+}
+
+.nav-active {
+  @include media('<desktop') {
+    overflow: hidden;
+  }
+}
+
+.nav-opener {
+  position: absolute;
+  font-size: 0;
+  width: 52px;
+  height: 52px;
+  background: $yellow;
+  z-index: 10;
+  border: 0;
+  top: 30px;
+  right: 15px;
+  cursor: pointer;
+
+  @include media('>=desktop') {
+    display: none;
+  }
+
+  em,
+  &::after,
+  &::before {
+    position: absolute;
+    height: 3px;
+    left: 12px;
+    right: 12px;
+    background: $white;
+    transition:
+      transform 0.3s ease,
+      top 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+  }
+
+  &::after {
+    top: 34px;
+
+    .nav-active & {
+      top: 24px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &::before {
+    top: 14px;
+
+    .nav-active & {
+      top: 24px;
+      transform: rotate(45deg);
+    }
+  }
+
+  em {
+    top: 24px;
+    left: 12px;
+
+    .nav-active & {
+      opacity: 0;
+    }
+  }
+}
+
+.drop-nav {
+  margin: 0 0 0 auto;
+
+  @include media('<desktop') {
+    background: $yellow;
+    padding: 70px 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    right: 0;
+    height: var(--full-viewport);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition:
+      visibility 0.3s ease,
+      z-index 0.3s ease,
+      opacity 0.3s ease;
+
+    .nav-active & {
+      z-index: auto;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

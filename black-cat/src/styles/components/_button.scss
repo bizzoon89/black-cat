@@ -1,0 +1,23 @@
+.button {
+  display: inline-block;
+  background: $yellow;
+  border: 1px solid $yellow;
+  transition: background 0.3s ease;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: top;
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 14px 20px;
+  color: $white;
+  text-decoration: none;
+  overflow: hidden;
+  font-weight: $font-weight-semibold;
+
+  &:hover {
+    color: $yellow;
+    background: $white;
+  }
+}

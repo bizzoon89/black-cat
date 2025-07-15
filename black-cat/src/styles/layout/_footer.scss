@@ -1,0 +1,21 @@
+.footer {
+  background: $grey-light;
+  padding: 25px 0;
+
+  @include media('>=desktop') {
+    padding: 50px 0;
+  }
+
+  .logo {
+    margin: 0 auto 20px;
+
+    @include media('>=desktop') {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.copy {
+  display: block;
+  text-align: center;
+}

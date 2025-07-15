@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the common layout of the site
+// -----------------------------------------------------------------------------
+
+body {
+  background-color: $body-bg;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  overflow: clip;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+* {
+  .resize-active & {
+    transition: none !important;
+  }
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: calc(1114px + 30px);
+}

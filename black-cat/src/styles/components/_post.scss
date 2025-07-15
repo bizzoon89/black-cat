@@ -1,0 +1,51 @@
+.posts-section {
+  padding: 25px 0;
+
+  @include media('>=desktop') {
+    padding: 47px 0;
+  }
+}
+
+.posts-holder {
+  column-gap: 24px;
+  column-count: 1;
+
+  @include media('>=phone') {
+    column-count: 2;
+  }
+
+  @include media('>=desktop') {
+    column-count: 3;
+  }
+}
+
+.post {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 20px;
+  font-weight: $font-weight-medium;
+  border: 1px solid #d0d0d0;
+
+  @include media('>=tablet') {
+    padding: 24px;
+  }
+
+  .image {
+    margin: -21px -21px 20px;
+
+    @include media('>=tablet') {
+      margin: -25px -25px 23px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+    }
+  }
+
+  .button {
+    width: 100%;
+  }
+}

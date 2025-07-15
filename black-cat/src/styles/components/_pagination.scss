@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+
+  @include media('>=desktop') {
+    margin: 40px 0;
+  }
+}
+
+.page-link {
+  display: inline-block;
+  padding: 11px 16px;
+  background-color: $grey;
+  min-width: 40px;
+  text-align: center;
+  color: $black;
+  text-decoration: none;
+  font-weight: $font-weight-medium;
+  flex-wrap: wrap;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.page-link:hover,
+.page-link.active {
+  background-color: $yellow;
+  color: $white;
+}
+
+.page-link.active {
+  pointer-events: none;
+}
